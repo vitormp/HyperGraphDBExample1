@@ -1,6 +1,9 @@
 package com.vitormp;
 
+import org.hypergraphdb.HGEnvironment;
 import org.hypergraphdb.HyperGraph;
+
+import com.vitormp.person.Person;
 
 public class HyperGraphDBExample01 {
 
@@ -9,7 +12,9 @@ public class HyperGraphDBExample01 {
 
 		HyperGraph hyperGraph = null;
 		try {
-			hyperGraph = new HyperGraph(databaseDirectory);
+			hyperGraph = HGEnvironment.get(databaseDirectory);
+			
+			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}finally {
